@@ -4,7 +4,7 @@ namespace app\http\controllers;
 
 use app\http\Response;
 
-class MainController
+class MainController extends Controller
 {
     public function index()
     {

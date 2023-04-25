@@ -8,6 +8,10 @@
     <title>Document</title>
 </head>
 <body>
-    main page
+<a href="about">about</a>
+<form action="about" method="post">
+    <input type="text" name="text">
+    <input type="submit">
+</form>
 </body>
 </html>

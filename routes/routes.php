@@ -1,8 +1,8 @@
 <?php
 use routes\Router;
 
-//$routes = [];
 
-Router::get(':id', ['MainController', 'index']);
+Router::get('about', ['AboutController', 'index']);
+Router::post('about', ['AboutController', 'send']);
+Router::get('main', ['MainController', 'index']);
 
-//return $routes;
