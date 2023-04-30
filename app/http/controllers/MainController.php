@@ -10,11 +10,6 @@ class MainController extends Controller
 {
     public function index()
     {
-        $model = new Main();
-        $result= $model->update([
-            'id' => 2,
-            'name' => 'alex'
-        ]);
-        var_dump($result);
+        Response::view('main');
     }
 }

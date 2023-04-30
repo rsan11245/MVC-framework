@@ -1,0 +1,12 @@
+body {
+    height: 100vh;
+}
+.form-cover {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.form-signin {
+    width: 400px;
+}

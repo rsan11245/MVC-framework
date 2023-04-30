@@ -62,7 +62,7 @@ class Router
             $UrlParam = $urlExploded[$i];
 
             if ($pathExploded[$i] !== $urlExploded[$i]) {
-                if ($pathExploded[$i][0] === ":") {
+                if ( !empty($pathExploded[$i]) && $pathExploded[$i][0] === ":") {
                     $this->params[$UrlParam] = $UrlParam;
                 } else {
                     return false;
