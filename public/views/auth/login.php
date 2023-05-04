@@ -11,7 +11,7 @@
 </head>
 <body class="text-center form-cover">
     <main class="form-signin">
-        <form>
+        <form action="login" method="post" class="form-login">
             <img src="/public/images/siteLogo.png" class="mb-4" width="72" height="57" style="background-color: white">
             <h1 class="h3 mb-3 fw-normal">Вход</h1>
             <div class="form-floating">

@@ -3,6 +3,7 @@
 namespace routes;
 
 use app\http\Response;
+use app\http\middleware\Middleware;
 
 class Router
 {
@@ -14,6 +15,13 @@ class Router
     {
         $this->path = $path;
         $this->actionArr = $actionArr;
+    }
+
+    public static function middleware($arr, $closure)
+    {
+        if(Middleware::check($arr)) {
+            $closure();
+        }
     }
 
     public static function get($path, $arr)

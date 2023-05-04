@@ -29,6 +29,22 @@ $(document).ready(function() {
             })
         }
     })
+
+    $('#logout').click(function (e) {
+        let formData = new FormData()
+        formData.append('logout', 'logout')
+        $.ajax({
+            type: 'post',
+            url: '/logout',
+            contentType: false,
+            cache: false,
+            processData: false,
+            data: formData,
+            success: function (result) {
+                window.location.href = '/login';
+            }
+        })
+    })
 })
 
 function changeLabel(elem, text, style = {}) {

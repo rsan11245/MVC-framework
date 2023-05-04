@@ -7,7 +7,7 @@ require 'app/models/conn.php';
 
 abstract class Model
 {
-    private $db;
+    protected $db;
     protected $table;
 
     protected $id;
@@ -17,7 +17,6 @@ abstract class Model
     public function __construct()
     {
         $this->db = connection();
-        $this->table = 'test';
     }
 
 
@@ -26,7 +25,6 @@ abstract class Model
         $values = ':id, ';
         foreach ($params as $key => $value) {
             $values .= ':' . $key;
-            //Узнать не последний ли это элемент
             if ($key !== array_key_last($params)) {
                 $values .= ', ';
             }
