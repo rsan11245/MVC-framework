@@ -60,18 +60,19 @@ class Router
         if ($url === '') {
             return $url === $this->path;
         }
-        $pathExploded = explode('/', $this->path);
-        $urlExploded = explode('/', $url);
-        if (count($pathExploded) !== count($urlExploded)) {
+        $routeArr = explode('/', $this->path);
+        $urlArr = explode('/', $url);
+
+        if (count($routeArr) !== count($urlArr)) {
             return false;
         }
 
-        for ($i = 0; $i < count($pathExploded); $i++) {
-            $UrlParam = $urlExploded[$i];
+        for ($i = 0; $i < count($routeArr); $i++) {
 
-            if ($pathExploded[$i] !== $urlExploded[$i]) {
-                if ( !empty($pathExploded[$i]) && $pathExploded[$i][0] === ":") {
-                    $this->params[$UrlParam] = $UrlParam;
+            if ($routeArr[$i] !== $urlArr[$i]) {
+                if ( !empty($routeArr[$i]) && $routeArr[$i][0] === ":") {
+
+                    $this->params[mb_substr($routeArr[$i], 1)] = $urlArr[$i];
                 } else {
                     return false;
                 }

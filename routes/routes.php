@@ -3,28 +3,34 @@ use routes\Router;
 
 
 //auth
-Router::get('register', ['AuthController', 'registerShow']);
-Router::get('login', ['AuthController', 'loginShow']);
-Router::post('register', ['AuthController', 'register']);
-Router::post('login', ['AuthController', 'login']);
-Router::post('logout', ['AuthController', 'logout']);
+Router::middleware(['guest'], function() {
+    Router::get('register', ['AuthController', 'registerShow']);
+    Router::get('login', ['AuthController', 'loginShow']);
+    Router::post('auth.register', ['AuthController', 'register']);
+    Router::post('auth.login', ['AuthController', 'login']);
+});
+
+Router::middleware(['auth'], function() {
+    Router::post('logout', ['AuthController', 'logout']);
+
+
+    Router::get('profile', ['ProfileController', 'index']);
+    Router::post('profile/update', ['ProfileController', 'update']);
+    Router::post('profile/delete', ['ProfileController', 'delete']);
+});
 
 //user profile
-Router::get('profile', ['ProfileController', 'index']);
+//Router::get('profile/user/:id', ['UserController', 'show']);
+
 
 
 
 //admin
 Router::middleware(['admin'], function () {
     Router::get('admin/users', ['AdminController', 'index']);
+    Router::post('admin/edit', ['AdminController', 'edit']);
 });
 
 
-
-
-
-
-Router::get('about', ['AboutController', 'index']);
-Router::post('about', ['AboutController', 'send']);
 Router::get('main', ['MainController', 'index']);
 

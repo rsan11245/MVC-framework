@@ -1,7 +1,6 @@
 <?php
 namespace app\http\middleware;
 
-use app\http\Response;
 
 class Middleware
 {
@@ -30,5 +29,10 @@ class Middleware
     private static function authCheck() : bool
     {
         return isset($_SESSION['user']);
+    }
+
+    private static function guestCheck() : bool
+    {
+        return !isset($_SESSION['user']);
     }
 }

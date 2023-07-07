@@ -1,6 +1,8 @@
 <?php
 return [
     'admin' => 'adminCheck',
-    'auth' => 'authCheck'
+    'auth' => 'authCheck',
+    'guest' => 'guestCheck',
+
 ];
 

@@ -11,23 +11,31 @@
 </head>
 <body class="text-center form-cover">
 <main class="form-signin">
-    <form class="form-register" action="register" method="post">
+    <form class="form-register" action="auth.register" method="post">
         <img src="/public/images/siteLogo.png" class="mb-4" width="72" height="57" style="background-color: white">
         <h1 class="h3 mb-3 fw-normal">Регистрация</h1>
         <div class="form-floating mb-3">
-            <input type="text" class="form-control" id="name" placeholder="Введите имя" name="name" required>
+            <input type="text" class="form-control" id="first_name" placeholder="Введите имя"
+                   name="first_name" required>
             <label for="name">Введите имя</label>
         </div>
         <div class="form-floating mb-3">
-            <input type="email" class="form-control" id="email" placeholder="Введите почту" name="email" required>
+            <input type="text" class="form-control" id="last_name" placeholder="Введите Фамилию"
+                   name="last_name" required>
+            <label for="name">Введите фамилию</label>
+        </div>
+        <div class="form-floating mb-3">
+            <input type="email" class="form-control" id="email" placeholder="Введите почту"
+                   name="email" required>
             <label for="email">Введите почту</label>
         </div>
         <div class="form-floating mb-3">
-            <input type="password" class="form-control" id="password" placeholder="Введите пароль" name="password">
+            <input type="password" class="form-control" id="password" placeholder="Введите пароль"
+                   name="password" value="1234">
             <label for="password">Введите пароль</label>
         </div>
         <div class="form-floating mb-3">
-            <input type="password" class="form-control" id="passwordConfirm" placeholder="Повторите пароль" name="passwordConfirm">
+            <input type="password" class="form-control" id="passwordConfirm" placeholder="Повторите пароль" name="passwordConfirm" value="1234">
             <label for="passwordConfirm">Повторите пароль</label>
         </div>
         <input type="submit" class="mt-3 w-100 btn btn-lg btn-primary" value="Регистрация">

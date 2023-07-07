@@ -51,11 +51,11 @@ abstract class Model
 
     public function findById($id)
     {
-        $sql = "SELECT id, name FROM {$this->table} WHERE id=:id";
+        $sql = "SELECT * FROM {$this->table} WHERE id=:id";
         $stmt = $this->db->prepare($sql);
         $stmt->bindValue(':id', $id);
         $stmt->execute();
-        return $stmt->fetchAll(PDO::FETCH_ASSOC);
+        return $stmt->fetchAll(PDO::FETCH_ASSOC)[0];
     }
 
     public function deleteById($id)
@@ -75,7 +75,6 @@ abstract class Model
                 continue;
             }
             $values .= $key .'=:' . $key;
-            //Узнать не последний ли это элемент
             if ($key !== array_key_last($entry)) {
                 $values .= ', ';
             }

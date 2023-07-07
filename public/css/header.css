@@ -1,0 +1,21 @@
+header {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 100px;
+    background: #5b639c;
+}
+
+header .logo {
+    font-size: 1.5rem;
+    color: #fff;
+    font-weight: 600;
+}
+
+.profile-button {
+    color: #fff;
+    border: 1px solid #fff;
+    padding: 5px;
+    border-radius: 2px;
+}

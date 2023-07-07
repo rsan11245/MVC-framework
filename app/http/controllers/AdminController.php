@@ -11,7 +11,16 @@ class AdminController extends Controller
 
     public function index()
     {
-        Response::view('admin/users');
+        $userModel = new User();
+        $users = $userModel->all();
+        Response::view('admin/users', ['users' => $users]);
+    }
+
+    public function edit(int $id): string
+    {
+        $model = new User();
+        $user = $model->findById($id);
+        return Response::json($user);
     }
 
 

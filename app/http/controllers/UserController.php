@@ -30,28 +30,30 @@ class UserController extends Controller
 
     }
 
-    // users/{id}
+    // user/{id}
     //  get
     public function show()
     {
-
+//        $userModel = new User();
+//        $user = $userModel->findById($this->params['id']);
+//        echo json_encode($this->params);
     }
 
-    // users/{id}/edit
+    // user/{id}/edit
     //  get
     public function edit()
     {
 
     }
 
-    // users/{id}/update
+    // user/{id}/update
     //  post
     public function update()
     {
 
     }
 
-    // users/{id}/delete
+    // user/{id}/delete
     //  post
     public function delete()
     {

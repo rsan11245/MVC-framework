@@ -15,11 +15,10 @@ class Response
         }
     }
 
-    public static function json($arr, $status = 200)
+    public static function json(array $arr, int $status = 200) : string
     {
         header("Content-Type: application/json");
-        echo json_encode($arr);
-        exit();
+        return json_encode(['data' => $arr, 'status' => $status]);
     }
 
     public static function errorPage($code)
